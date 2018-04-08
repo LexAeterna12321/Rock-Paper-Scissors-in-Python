@@ -1,0 +1,32 @@
+#importing a choice function from random module
+from random import choice
+your_choice = input("input rock, paper or scissors\n")
+# creating a function for our game
+def RPS(your_choice):
+    while True:
+        options = ['Rock', 'Paper', 'Scissors']
+        comp_choice = choice(options)
+        # comp_choice returns one of the elements at random
+        if (your_choice.title() == comp_choice):
+            print("Computer has got",comp_choice, "it's a tie. Try again")
+
+        elif (your_choice.title() == "Rock" and comp_choice == "Paper"):
+            print("Computer has got",comp_choice,"You lost. Try again")
+
+        elif (your_choice.title() == "Rock" and comp_choice == "Scissors"):
+            print("Computer has got",comp_choice,"You win. Congratz")
+
+        elif (your_choice.title() == "Paper" and comp_choice == "Scissors"):
+            print("Computer has got",comp_choice,"You lost. Try again")
+
+        elif (your_choice.title() == "Paper" and comp_choice == "Rock"):
+            print("Computer has got",comp_choice,"You win. Congratz")
+
+        elif (your_choice.title() == "Scissors" and comp_choice == "Rock"):
+            print("Computer has got",comp_choice,"You lost. Try again")
+
+        elif (your_choice.title() == "Scissors" and comp_choice == "Paper"):
+            print("Computer has got",comp_choice,"You win. Congratz")
+        your_choice = input("input rock, paper or scissors\n")
+
+print(RPS(your_choice))
